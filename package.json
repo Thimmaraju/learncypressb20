@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run --headed --spec cypress/e2e/Buzz/newsfeed.cy.js",
+    "open": "npx cypress open",
+    "teststaging": "npx cypress run --config-file staging.cypress.config.js",
+    "testprod": "npx cypress run --config-file prod.cypress.config.js"
+  
   },
   "author": "",
   "license": "ISC",

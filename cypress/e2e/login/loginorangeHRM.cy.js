@@ -1,4 +1,4 @@
-
+import data from "../../fixtures/logincreds.json"
 
 describe('Verify Login functionality', () => {
 
@@ -8,8 +8,8 @@ describe('Verify Login functionality', () => {
         cy.viewport(1920, 1080)
         cy.visit('/web/index.php/auth/login')
 
-        cy.get('input[name="username2"]').type("Admin")
-        cy.get('input[type="password"]').type("admin123")
+        cy.get('input[name="username2"]').type(data.username)
+        cy.get('input[type="password"]').type(data.password)
         cy.get('button[type="submit"]').click()
 
         cy.url().should("eq", 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')

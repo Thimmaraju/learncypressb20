@@ -1,3 +1,4 @@
+
 describe('Verify Buzz Functionalities', () => {
 
     it('Verify Whats on your mind', () => {
@@ -6,8 +7,8 @@ describe('Verify Buzz Functionalities', () => {
        
         cy.visit('/web/index.php/auth/login')
 
-        cy.get('input[name="username"]').type("Admin")
-        cy.get('input[type="password"]').type("admin123")
+        cy.get('input[name="username"]').type(Cypress.env("username"))
+        cy.get('input[type="password"]').type(Cypress.env("password"))
         cy.get('button[type="submit"]').click()
 
         cy.url().should("eq", 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')

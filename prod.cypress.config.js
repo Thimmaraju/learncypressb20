@@ -4,9 +4,6 @@ module.exports = defineConfig({
 
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
-    //specPattern: "**/*.raju.js",
-    screenshotsFolder: "cypress/pics",
-    videosFolder: "cypress/ramesh",
     'baseUrl':"https://opensource-demo.orangehrmlive.com",
     //'defaultCommandTimeout': 20000,
     'pageLoadTimeout': 120000,
