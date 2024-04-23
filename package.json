@@ -8,12 +8,11 @@
     "open": "npx cypress open",
     "teststaging": "npx cypress run --config-file staging.cypress.config.js",
     "testprod": "npx cypress run --config-file prod.cypress.config.js"
-  
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.7.3"
+    "cypress": "^13.8.0"
   },
   "devDependencies": {
     "cypress-mochawesome-reporter": "^3.8.2"
