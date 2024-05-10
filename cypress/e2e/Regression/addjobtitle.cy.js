@@ -1,5 +1,5 @@
-import logindata from "../fixtures/logincreds.json"
-import jobtitledata from "../fixtures/addjobtitle.json"
+import logindata from "../../fixtures/logincreds.json"
+import jobtitledata from "../../fixtures/addjobtitle.json"
 describe('Verify Add Job', function () {
 
     const menuitems = {
