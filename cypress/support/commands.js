@@ -25,3 +25,29 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 require('@4tw/cypress-drag-drop')
+import 'cypress-file-upload';
+
+Cypress.Commands.add("addemployee", (firstname, lastname)=>{
+
+    cy.contains('Add Employee').click()
+
+    cy.get('input[name="firstName"]').type(firstname)
+
+    cy.get('input[name="lastName"]').type(lastname)
+
+    cy.get('button[type="submit"]').click()
+
+    cy.contains('Successfully Saved').should("be.visible")
+})
+
+Cypress.Commands.add("login", (username, password)=>{
+
+    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+
+    cy.get('input[name="username"]').type(username)
+    cy.get('input[type="password"]').type(password)
+    cy.get('button[type="submit"]').click()
+
+    
+
+})

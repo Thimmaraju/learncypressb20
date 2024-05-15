@@ -2,11 +2,11 @@
 
 describe('Automation - File Upload Example', function () {
 
-    it.only('Cypress Test Case - Understanding upload file- Attachfile', function () {
+    it('Cypress Test Case - Understanding upload file- Attachfile', function () {
   
       cy.visit('https://cgi-lib.berkeley.edu/ex/fup.html');
 
-     cy.xpath('//input[@name="upfile"]').attachFile('module1/sample.txt');
+     cy.xpath('//input[@name="upfile"]').attachFile('uploadfiles/B20 Automation classes .txt');
       
       cy.wait(3000)
       cy.xpath('//input[@type="submit"]').click();
@@ -20,7 +20,7 @@ describe('Automation - File Upload Example', function () {
   
       cy.visit('https://cgi-lib.berkeley.edu/ex/fup.html');
 
-     cy.xpath('//input[@name="upfile"]').selectFile('D:/Learncypressb19/cypress/fixtures/module1/sample.txt');
+     cy.xpath('//input[@name="upfile"]').selectFile('D:/Learncypressb20/cypress/fixtures/uploadfiles/B20 Automation classes .txt');
     
 
       cy.wait(3000)
@@ -32,7 +32,7 @@ describe('Automation - File Upload Example', function () {
    
     //Import - Uploading file 
 
-    it.only('Cypress Test Case - Understanding download file ', function () {
+    it('Cypress Test Case - Understanding download file ', function () {
       let r = (Math.random() + 1).toString(36).substring(7);
       cy.downloadFile("https://istqb-main-web-prod.s3.amazonaws.com/media/documents/ISTQB_CTFL_Syllabus-v4.0.pdf", "cypress/downloads", "istqbsyllabus"+r+".pdf")
       cy.readFile("cypress/downloads/istqbsyllabus"+r+".pdf").should('exist')
@@ -44,7 +44,7 @@ describe('Automation - File Upload Example', function () {
       cy.readFile('cypress/downloads/card.jpg').should('exist')
     })
 
-    it.only('Cypress Test Case - Understanding download file ', function () {
+    it('Cypress Test Case - Understanding download file ', function () {
       
       cy.downloadFile("https://cdn.britannica.com/54/75854-050-E27E66C0/Eiffel-Tower-Paris.jpg","cypress/downloads", "tower.jpg")
       cy.readFile('cypress/downloads/tower.jpg').should('exist')

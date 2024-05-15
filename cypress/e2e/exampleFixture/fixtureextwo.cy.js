@@ -12,11 +12,7 @@ describe('Verify Add employee functionality', function() {
 
         cy.log("Test execution started")
        
-        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
-
-        cy.get('input[name="username"]').type(logindata.username)
-        cy.get('input[type="password"]').type(logindata.password)
-        cy.get('button[type="submit"]').click()
+        cy.login('Admin', "admin123")
 
         cy.url().should("eq", 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
         //or

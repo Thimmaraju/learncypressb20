@@ -19,10 +19,10 @@ describe('Automation - Working With Tables in webpage', function () {
 
         var percentageofchange = txt.text()
         
-        expect(percentageofchange).to.equal("+0.07")
+        expect(percentageofchange).to.equal("-0.42")
      
          })
- //         //Get row data and Validate column text
+         //Get row data and Validate column text
 
         cy.xpath('//table[@class="dataTable"]/tbody/tr[4]').within(() => {
 
@@ -32,18 +32,16 @@ describe('Automation - Working With Tables in webpage', function () {
 
                 cy.log(text)
 
-                expect(text).to.equal("1645.85")
+                expect(text).to.equal("1580.85")
             })
 
              cy.get('td').eq(0).should('contain.text', 'Bajaj Finserv Ltd.')
 
          })
 
+        //Validate data based on Cell Values 
 
-
-// //         //Validate data based on Cell Values 
-
-        cy.get('.dataTable >tbody').contains('HDFC Bank Ltd').parent().parent().within(() => {
+        cy.get('.dataTable >tbody').contains('State Bank of India').parent().parent().within(() => {
 
             cy.get('td').eq(3).then((ele) => {
 
@@ -52,39 +50,23 @@ describe('Automation - Working With Tables in webpage', function () {
         })
 
 
-//         cy.get('.dataTable >tbody').contains('ICICI Bank Ltd').parent().parent().within(() => {
 
-//             cy.get('td').eq(3).then((ele) => {
+  // Get entire Table Data
+      var  total;
+        cy.get('.dataTable> tbody > tr >td:nth-child(4)')
+            .each((col) => {
 
-//                 cy.log("Prev price: "+ ele.text())
-//             })
-//         })
+                cy.wrap(col).within((celldata) => {
 
+                  var x = celldata.text()
+                  var y = Number(x)
 
-//         cy.get('.dataTable >tbody').contains('Infosys Ltd').parent().parent().within(() => {
-
-//             cy.get('td').eq(3).then((ele) => {
-
-//                 cy.log("Prev price: "+ ele.text())
-//             })
-//         })
-
-// //   // Get entire Table Data
-// // var  total;
-// //         cy.get('.dataTable> tbody > tr >td:nth-child(4)')
-// //             .each((col) => {
-
-// //                 cy.wrap(col).within((celldata) => {
-
-// //                   var x = celldata.text()
-// //                   var y = Number(x)
-
-// //                     total = total+y
+                    total = total+y
                     
-// //                 })
-// //             })
+                })
+            })
         
-// //             cy.log(total)
+            cy.log(total)
 
 
 

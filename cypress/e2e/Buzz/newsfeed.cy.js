@@ -14,13 +14,13 @@ describe('Verify Buzz Functionalities', () => {
      
         cy.log("Test execution started")
        
-        cy.visit('/web/index.php/auth/login')
+        //cy.visit('/web/index.php/auth/login')
 
         // cy.get(login.usernameInput()).type(creds.username)
         // cy.get(login.passwordInput()).type(creds.password)
         // cy.get(login.loginBtn()).click()
 
-        login.loginwithcreds(data.username, data.password)
+        cy.login("Admin", "admin123")
 
         cy.url().should("eq", 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
         //or

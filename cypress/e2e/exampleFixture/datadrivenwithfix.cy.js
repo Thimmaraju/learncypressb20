@@ -31,11 +31,7 @@ const availablefixtures = [
         
             cy.log("Test execution started")
        
-            cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
-    
-            cy.get('input[name="username"]').type(data.username)
-            cy.get('input[type="password"]').type(data.password)
-            cy.get('button[type="submit"]').click()
+            cy.login("Admin", "admin123")
     
             cy.url().should("eq", 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
             //or
