@@ -26,10 +26,11 @@
 
 require('@4tw/cypress-drag-drop')
 import 'cypress-file-upload';
+require('cypress-downloadfile/lib/downloadFileCommand')
 
 Cypress.Commands.add("addemployee", (firstname, lastname)=>{
 
-    cy.contains('Add Employee').click()
+   // cy.contains('Add Employee').click()
 
     cy.get('input[name="firstName"]').type(firstname)
 

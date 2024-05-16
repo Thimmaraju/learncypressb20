@@ -10,7 +10,7 @@ describe('Example to demo conditional testing in cypress', () => {
        // cy.get("locator").should("exist")
         cy.wait(3000)
         cy.get('body').then(($body) => {
-            if ($body.find('[data-jsl10n="wikivoyage.Raju"]').length > 0) {
+            if ($body.find('[data-jsl10n="wikivoyage.dkrgjoerjg"]').length > 0) {
           
                 cy.get('[data-jsl10n="wikivoyage.name"]').click()
                 cy.wait(3000)
