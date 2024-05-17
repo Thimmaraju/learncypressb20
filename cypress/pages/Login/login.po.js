@@ -6,15 +6,15 @@ class loginPage{
         return 'img[alt="company-branding"]'
     }
 
-    // usernameInput(){
+    usernameInput(){
 
-    //     return 'input[name="username"]'
-    // }
+        return 'input[name="username"]'
+    }
 
-    // passwordInput(){
+    passwordInput(){
 
-    //     return 'input[name="password"]'
-    // }
+        return 'input[name="password"]'
+    }
 
     credsInput(attributevalue){
 

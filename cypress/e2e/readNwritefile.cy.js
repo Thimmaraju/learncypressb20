@@ -3,24 +3,22 @@
 
 describe('Automation - Write file and Read file ', function () {
 
-    it('Cypress Test Case - Write file example', function () {
+    it.only('Cypress Test Case - Write file example', function () {
 
-        
-        cy.writeFile('cypress/fixtures/module1/test.txt', "Gowda\n")
-
- 
+        var ordernum = "34758467"
+        cy.writeFile('cypress/fixtures/module1/test.txt', "Shoba\n\n" )
      
     })
 
 
-    it('Cypress Test Case - Append Data in end to the file ', function () {
+    it.only('Cypress Test Case - Append Data in end to the file ', function () {
         
         cy.wait(5000)
         cy.writeFile('cypress/fixtures/module1/test.txt', "Ganesh",{flag: 'a+'});
      
     })
 
-    it('Cypress Test Case - Create Json file ', function () {
+    it.only('Cypress Test Case - Create Json file ', function () {
         
         cy.writeFile('cypress/fixtures/module1/test6.json', { firstname: 'G', lastname: 'Thimmaraju'});
      
@@ -54,9 +52,9 @@ describe('Automation - Write file and Read file ', function () {
         cy.readFile('cypress/fixtures/logincreds.json').should('exist')
 
      
-          cy.readFile('cypress/fixtures/module1/test.txt').should('contain','Gowda');
+          cy.readFile('cypress/fixtures/module1/test.txt').should('contain','Shoba');
 
-          cy.readFile('cypress/fixtures/module1/test.txt').should('contain','Gowda\nGanesh')       
+          cy.readFile('cypress/fixtures/module1/test.txt').should('contain','Shoba\n\nGanesh')       
     })
 
 
